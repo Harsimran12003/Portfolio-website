@@ -3,6 +3,7 @@ import './App.css';
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </section>
         <section>
           <Skills />
+        </section>
+        <section>
+          <Education />
         </section>
 
       </main>
