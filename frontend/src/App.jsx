@@ -1,28 +1,34 @@
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
 import './App.css';
 import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <Navbar></Navbar>
-      </header>
+    <div className="App bg-black text-white min-h-screen">
+      {/* Sticky Navbar */}
+      <Navbar />
+
+      {/* Main Content */}
       <main>
         <section>
-          <Hero></Hero>
+          <Hero />
         </section>
         <section>
-          <h2>Projects</h2>
-          <p>List your projects here.</p>
+          <About />
         </section>
+        <section>
+          <Skills />
+        </section>
+
       </main>
-      <footer>
+
+      <footer className="text-center py-4 bg-zinc-800">
         <p>&copy; 2023 My Portfolio</p>
       </footer>
     </div>
-  )
+  );
 }
 
-
-export default App
+export default App;
