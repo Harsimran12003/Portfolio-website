@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar"
 import './App.css';
+import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -9,8 +10,7 @@ function App() {
       </header>
       <main>
         <section>
-          <h2>About Me</h2>
-          <p>Here you can add information about yourself.</p>
+          <Hero></Hero>
         </section>
         <section>
           <h2>Projects</h2>
