@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </section>
         <section>
           <Education />
+        </section>
+        <section>
+          <Projects />
         </section>
 
       </main>
