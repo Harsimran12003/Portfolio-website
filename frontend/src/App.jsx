@@ -5,36 +5,39 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App bg-black text-white min-h-screen">
-      {/* Sticky Navbar */}
+      
       <Navbar />
 
-      {/* Main Content */}
       <main>
-        <section>
+        <section id="home">
           <Hero />
         </section>
-        <section>
+        <section id="about">
           <About />
         </section>
-        <section>
+        <section id="skills">
           <Skills />
         </section>
-        <section>
+        <section id="education">
           <Education />
         </section>
-        <section>
+        <section id="projects">
           <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
         </section>
 
       </main>
 
-      <footer className="text-center py-4 bg-zinc-800">
-        <p>&copy; 2023 My Portfolio</p>
-      </footer>
+      <Footer />
+
     </div>
   );
 }
