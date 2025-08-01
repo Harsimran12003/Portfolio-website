@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/skills';
+const API_URL = ' https://portfolio-website-9ool.onrender.com/api/skills';
 
 export const getSkills = async () => {
   const res = await fetch(API_URL);
