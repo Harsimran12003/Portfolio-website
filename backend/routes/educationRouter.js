@@ -1,15 +1,8 @@
 const express = require('express');
-const router = express.Router();
-const {
-  getEduExp,
-  addEduExp,
-  updateEduExp,
-  deleteEduExp,
-} = require('../controllers/educationController');
+const { getEducation } = require('../controllers/educationController');
 
-router.get('/', getEduExp);
-router.post('/', addEduExp);
-router.put('/:id', updateEduExp);
-router.delete('/:id', deleteEduExp);
+const router = express.Router();
+
+router.get('/', getEducation);
 
 module.exports = router;

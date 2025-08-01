@@ -1,21 +1,23 @@
+import { useEffect, useState } from "react";
 import SkillCard from "./SkillCard";
-
-const skills = [
-  { icon: "/icons/html.png", name: "HTML5" },
-  { icon: "/icons/css.webp", name: "CSS3" },
-  { icon: "/icons/javascript.png", name: "JavaScript" },
-  { icon: "/icons/react.svg", name: "React" },
-  { icon: "/icons/node.png", name: "Node.js" },
-  { icon: "/icons/express.png", name: "Express.js" },
-  { icon: "/icons/python.webp", name: "Python" },
-  { icon: "/icons/git.svg", name: "Git" },
-  { icon: "/icons/mysql.png", name: "MySQL" },
-  { icon: "/icons/mongodb.png", name: "Mongo DB" },
-  { icon: "/icons/docker.webp", name: "Docker" },
-  { icon: "/icons/kubernetes.png", name: "Kubernetes" },
-];
+import { getSkills } from "../services/skillService";
 
 const Skills = () => {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const data = await getSkills();
+        setSkills(data);
+      } catch (err) {
+        console.error("Error loading skills:", err);
+      }
+    };
+
+    fetchSkills();
+  }, []);
+
   return (
     <section id="skills" className="bg-black py-14 px-4">
       <h2 className="text-white text-4xl font-bold text-center mb-12">My Skills</h2>

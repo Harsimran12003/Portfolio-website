@@ -1,18 +1,27 @@
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
+import ProjectsCard from "./ProjectsCard";
+import { getProjects } from "../services/projectService";
 
-// Slick carousel styles (make sure these are in your global CSS)
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ProjectsCard from "./ProjectsCard";
-
-const projectData = [
-  { title: "Brand Mockup", image: "/images/project1.png" },
-  { title: "Energy Can Website", image: "/images/project2.png" },
-  { title: "Product Showcase", image: "/images/project3.png" },
-  { title: "UI Kit Preview", image: "/images/project4.png" },
-];
 
 const Projects = () => {
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const projects = await getProjects();
+        setProjectData(projects);
+      } catch (error) {
+        console.error("Error loading projects:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -30,7 +39,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto space-y-10">
         <h2 className="text-3xl font-bold border-b-2 inline-block border-lime-300 mb-4">
           My Projects
-        </h2>
+        </h2><br /><br />
 
         <Slider {...settings}>
           {projectData.map((project, index) => (

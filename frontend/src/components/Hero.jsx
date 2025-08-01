@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="bg-[#1c1c1c] text-white px-8 py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between relative z-10">
         
-        {/* Left: Text Content */}
+        
         <motion.div
           className="flex-1 space-y-6 text-center md:text-left"
           initial={{ opacity: 0, x: -50 }}

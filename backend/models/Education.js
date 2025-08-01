@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const eduExpSchema = new mongoose.Schema({
+const educationSchema = new mongoose.Schema({
+  course: String,           
   institution: String,
-  degree: String,
-  year: String
+  duration: String          
 });
 
-module.exports = mongoose.model('EduExp', eduExpSchema);
+module.exports = mongoose.model('Education', educationSchema);

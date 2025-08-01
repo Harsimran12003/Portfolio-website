@@ -1,32 +1,29 @@
-const educationData = [
-  {
-    course: "BTech in Computer Science & Engineering",
-    institution: "PCTE Group of Institutes, Ludhiana",
-    duration: "2022–Present",
-  },
-  {
-    course: "Python in Data Science Training",
-    institution: "Auribises Technologies Pvt. Ltd., Ludhiana",
-    duration: "2024 ",
-  },
-  {
-    course: "Senior Secondary Education",
-    institution: "Guru Nanak International Public School, Ludhiana",
-    duration: "2022 ",
-  },
-];
+import { useEffect, useState } from "react";
+import { getEducation } from "../services/educationService";
 
 const Education = () => {
+  const [educationData, setEducationData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getEducation();
+        setEducationData(data);
+      } catch (error) {
+        console.error("Failed to load education data", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section id="education" className="bg-[#1c1c1c] text-white px-8 py-20">
       <div className="max-w-7xl mx-auto space-y-10">
-        
-        {/* Section Title */}
         <h2 className="text-3xl font-bold border-b-2 inline-block border-lime-300 mb-4">
           My Education
         </h2>
 
-        {/* Education Cards */}
         <div className="space-y-8">
           {educationData.map((item, index) => (
             <div
@@ -37,7 +34,9 @@ const Education = () => {
                 <h3 className="text-xl font-semibold mb-1">{item.course}</h3>
                 <p className="text-sm text-gray-300">{item.institution}</p>
               </div>
-              <div className="text-lime-200 font-bold text-xl mt-4 md:mt-0">{item.duration}</div>
+              <div className="text-lime-200 font-bold text-xl mt-4 md:mt-0">
+                {item.duration}
+              </div>
             </div>
           ))}
         </div>
