@@ -18,6 +18,10 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({ status: "OK", timestamp: new Date().toISOString() });
+});
+
 
 app.use('/api/user', userRoutes);
 app.use('/api/projects', projectRoutes);
