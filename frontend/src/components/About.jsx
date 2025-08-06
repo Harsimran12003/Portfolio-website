@@ -34,25 +34,27 @@ const About = () => {
             {user.about || "Passionate about building user-centric, responsive, and efficient web applications. I enjoy solving technical challenges and continuously expanding my skill set through modern development tools."}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-6 text-sm text-gray-300">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 text-sm text-gray-300">
             <div><span className="font-semibold text-white">Name:</span> {user.name}</div>
             <div><span className="font-semibold text-white">Nationality:</span> {user.nationality}</div>
             <div><span className="font-semibold text-white">Phone:</span> {user.phone}</div>
             <div><span className="font-semibold text-white">Email:</span> {user.email}</div>
             <div><span className="font-semibold text-white">Freelance:</span> {user.freelance}</div>
             <div><span className="font-semibold text-white">Qualification:</span> {user.qualification}</div>
-            <div>
-              <span className="font-semibold text-white">Github:</span>{" "}
-              <a
-                href={user.github}
-                className=" underline"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {user.github}
-              </a>
-            </div>
-            <div><span className="font-semibold text-white">Languages:</span> {user.languages?.join(", ")}</div>
+                        <div><span className="font-semibold text-white">Languages:</span> {user.languages?.join(", ")}</div>
+
+            <div className="break-words">
+  <span className="font-semibold text-white">Github:</span>{" "}
+  <a
+    href={user.github}
+    className="underline break-all"
+    target="_blank"
+    rel="noreferrer"
+  >
+    {user.github}
+  </a>
+</div>
+
           </div>
         </div>
 
