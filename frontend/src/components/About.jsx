@@ -34,7 +34,7 @@ const About = () => {
             {user.about || "Passionate about building user-centric, responsive, and efficient web applications. I enjoy solving technical challenges and continuously expanding my skill set through modern development tools."}
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 text-sm text-gray-300">
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-6 text-sm text-gray-300">
             <div><span className="font-semibold text-white">Name:</span> {user.name}</div>
             <div><span className="font-semibold text-white">Nationality:</span> {user.nationality}</div>
             <div><span className="font-semibold text-white">Phone:</span> {user.phone}</div>
