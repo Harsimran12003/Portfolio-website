@@ -1,4 +1,4 @@
-const API_URL = " http://localhost:3000/api/projects";
+const API_URL = "https://portfolio-website-backend-ashy.vercel.app/api/projects";
 
 export const getProjects = async () => {
   try {

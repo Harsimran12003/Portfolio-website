@@ -1,5 +1,5 @@
 
-const API_URL = " http://localhost:3000/api/education";
+const API_URL = "https://portfolio-website-backend-ashy.vercel.app/api/education";
 
 export const getEducation = async () => {
   try {
