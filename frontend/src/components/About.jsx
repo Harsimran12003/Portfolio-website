@@ -17,45 +17,110 @@ const About = () => {
   }, []);
 
   if (!user) {
-    return <p className="text-white text-center py-10">Loading About Info...</p>;
+    return (
+      <p className="text-white text-center py-10">
+        Loading About Info...
+      </p>
+    );
   }
 
   return (
-    <section id="about" className="bg-[#1c1c1c] text-white px-8 py-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+    <section id="about" className="bg-[#1c1c1c] text-white px-6 md:px-10 py-24">
+      <div className="max-w-7xl mx-auto">
 
-        {/* Left: About Text & Info */}
-        <div className="flex-1 space-y-6">
-          <h2 className="text-3xl font-bold border-b-2 inline-block border-lime-300 mb-4">
-            About Me
+        {/* Title */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-bold">
+            About <span className="text-lime-300">Me</span>
           </h2>
+          
+        </div>
 
-          <p className="text-gray-300 leading-relaxed">
-            {user.about || "Passionate about building user-centric, responsive, and efficient web applications. I enjoy solving technical challenges and continuously expanding my skill set through modern development tools."}
+        {/* ABOUT TEXT */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <p className="text-gray-300 text-lg leading-relaxed">
+            {user.about ||
+              "Passionate about building user-centric, responsive, and scalable web applications. I enjoy solving real-world problems through technology and continuously expanding my knowledge in modern web development."}
           </p>
+        </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 text-sm text-gray-300">
-            <div><span className="font-semibold text-white">Name:</span> {user.name}</div>
-            <div><span className="font-semibold text-white">Nationality:</span> {user.nationality}</div>
-            <div><span className="font-semibold text-white">Phone:</span> {user.phone}</div>
-            <div><span className="font-semibold text-white">Email:</span> {user.email}</div>
-            <div><span className="font-semibold text-white">Freelance:</span> {user.freelance}</div>
-            <div><span className="font-semibold text-white">Qualification:</span> {user.qualification}</div>
-                        <div><span className="font-semibold text-white">Languages:</span> {user.languages?.join(", ")}</div>
+        {/* INFO CARDS */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
 
-            <div className="break-words">
-  <span className="font-semibold text-white">Github:</span>{" "}
-  <a
-    href={user.github}
-    className="underline break-all"
-    target="_blank"
-    rel="noreferrer"
-  >
-    {user.github}
-  </a>
-</div>
-
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Name</p>
+            <p className="font-semibold text-lg">{user.name}</p>
           </div>
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Nationality</p>
+            <p className="font-semibold text-lg">{user.nationality}</p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Phone</p>
+            <p className="font-semibold text-lg">{user.phone}</p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Email</p>
+            <p className="font-semibold break-words">{user.email}</p>
+          </div>
+
+        </div>
+
+        {/* SECOND ROW */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Freelance</p>
+            <p className="font-semibold">{user.freelance}</p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Qualification</p>
+            <p className="font-semibold">{user.qualification}</p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Languages</p>
+            <p className="font-semibold">
+              {user.languages?.join(", ")}
+            </p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-6 rounded-xl hover:scale-105 transition">
+            <p className="text-gray-400 text-sm">Github</p>
+            <a
+              href={user.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-lime-300 hover:underline"
+            >
+              Visit Profile
+            </a>
+          </div>
+
+        </div>
+
+        {/* STATS */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+
+          <div className="bg-[#2a2a2a] p-8 rounded-xl hover:scale-105 transition">
+            <h3 className="text-3xl font-bold text-lime-300">1+</h3>
+            <p className="text-gray-400">Years Experience</p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-8 rounded-xl hover:scale-105 transition">
+            <h3 className="text-3xl font-bold text-lime-300">12+</h3>
+            <p className="text-gray-400">Projects Completed</p>
+          </div>
+
+          <div className="bg-[#2a2a2a] p-8 rounded-xl hover:scale-105 transition">
+            <h3 className="text-3xl font-bold text-lime-300">10+</h3>
+            <p className="text-gray-400">Technologies</p>
+          </div>
+
         </div>
 
       </div>

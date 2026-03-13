@@ -7,6 +7,10 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Experience  from "./components/Experience"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Achievements from "./components/Achievements";
 
 function App() {
   return (
@@ -24,11 +28,17 @@ function App() {
         <section id="skills">
           <Skills />
         </section>
+        <section id="experience">
+          <Experience />
+        </section>
         <section id="education">
           <Education />
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="achievements">
+          <Achievements />
         </section>
         <section id="contact">
           <Contact />

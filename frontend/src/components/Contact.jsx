@@ -36,7 +36,7 @@ const Contact = () => {
             Feel free to reach out for collaborations 😊.
           </p>
           <div className="space-y-4 text-gray-300 text-sm">
-            <p><span className="font-semibold text-white">Address:</span> 503, Phase 1, Urban Estate, Dugri, Ludhiana</p>
+            
             <p><span className="font-semibold text-white">Phone:</span> +91 9914322503</p>
             <p><span className="font-semibold text-white">Email:</span> harsimran12003@gmail.com</p>
             <p><span className="font-semibold text-white">GitHub:</span> <a href="https://github.com/Harsimran12003" target="_blank" rel="noopener noreferrer" className="text-lime-300 hover:underline">Harsimran12003</a></p>
@@ -51,7 +51,7 @@ const Contact = () => {
           </div>
           <input type="text" name="subject" placeholder="Subject" className="w-full px-4 py-2 bg-gray-800 text-white rounded focus:outline-none" required />
           <textarea name="message" placeholder="Your Message" rows="5" className="w-full px-4 py-2 bg-gray-800 text-white rounded focus:outline-none" required></textarea>
-          <button type="submit" className="bg-lime-300 text-black px-6 py-2 rounded font-semibold hover:bg-lime-400 transition">
+          <button type="submit" className="bg-lime-300 text-black px-6 py-2 rounded font-semibold hover:bg-lime-400 transition cursor-pointer">
             Send Message
           </button>
         </form>

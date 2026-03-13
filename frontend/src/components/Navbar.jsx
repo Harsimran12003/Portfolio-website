@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,10 +19,8 @@ const Navbar = () => {
 
       {/* Logo */}
       <div className="flex items-center gap-3">
-        <img src="logo.png" alt="Logo" className="h-10 w-auto object-contain" />
-        <span className="font-bold text-lg tracking-wide hidden sm:block">
-          Portfolio
-        </span>
+        <img src="logo.png" alt="Logo" className="h-10 w-auto object-contain rounded-sm" />
+        
       </div>
 
       {/* Desktop Menu */}
@@ -39,6 +37,27 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+      {/* Social Icons (Desktop) */}
+      <div className="hidden md:flex items-center gap-4">
+        <a
+          href="https://github.com/Harsimran12003"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-lime-300 transition"
+        >
+          <Github size={22} />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/harsimranjitk12/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-lime-300 transition"
+        >
+          <Linkedin size={22} />
+        </a>
+      </div>
 
       {/* Mobile Menu Button */}
       <button
@@ -63,6 +82,17 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
+
+            {/* Social Icons Mobile */}
+            <div className="flex gap-6 pt-4">
+              <a href="https://github.com/yourusername">
+                <Github size={24} />
+              </a>
+              <a href="https://linkedin.com/in/yourusername">
+                <Linkedin size={24} />
+              </a>
+            </div>
+
           </ul>
         </div>
       )}
