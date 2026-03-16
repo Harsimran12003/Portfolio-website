@@ -55,7 +55,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
             {/* Download CV */}
             <a
-              href="/resume.pdf"
+              href="/Harsimranjit_Kaur_CV.pdf"
               download
               className="bg-lime-300 text-black px-6 py-3 rounded-lg font-semibold hover:bg-lime-400 transition shadow-lg"
             >
